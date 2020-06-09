@@ -1,0 +1,77 @@
+.loginform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333333;
+}
+
+.outerbox {
+  background-color: white;
+  height: 323px;
+  width: 250px;
+}
+.newouterbox {
+  background-color: white;
+  height: 400px;
+  width: 250px;
+}
+form {
+  padding: 24px;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+.signin,
+.signup {
+  margin-top: 10px;
+}
+.btn-primary {
+  background-color: #7c5cbf;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #63479e;
+}
+.leftcolumn {
+  display: flex;
+  flex-direction: column;
+}
+.leftcolumn h1 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 25px;
+  color: #624997;
+}
+.leftcolumn input {
+  width: 80%;
+}
+.leftcolumn button {
+  margin-top: 20px;
+  width: 80%;
+}
+.leftcolumn label {
+  font-weight: 600;
+}
+
+.theaddark {
+  background-color: #7c5cbf;
+}
+.transaction nav {
+  display: flex;
+}
+.transaction .navbar {
+  color: black;
+}
+.rightcolumn {
+  height: 90vh;
+}
+.balance {
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
+}
+.transaction .uploadbutton {
+  width: 40%;
+}
