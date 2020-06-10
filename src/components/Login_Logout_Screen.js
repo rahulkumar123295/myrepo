@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import history from "../history";
 
-class Screen extends Component {
+class Login_Logout_Screen extends Component {
   constructor() {
     super();
     this.state = { username: "", password: "" };
     this.ref1 = React.createRef();
     this.ref2 = React.createRef();
+    this.index = 1;
   }
   componentDidMount() {
     return (
@@ -39,17 +40,27 @@ class Screen extends Component {
     e.preventDefault();
     this.ref1.current.classList.remove("outerbox");
     this.ref1.current.classList.add("newouterbox");
-    this.ref2.current.classList.add("form-group");
-    const newlabel = document.createElement("label");
-    newlabel.innerHTML = "Confirm Psassword";
-    const newinput = document.createElement("input");
-    newinput.classList.add("form-control");
-    newinput.placeholder = "Confirm Password";
-    newinput.type = "password";
-    this.ref2.current.appendChild(newlabel);
-    this.ref2.current.appendChild(newinput);
-  };
+    if (this.index === 1) {
+      this.ref2.current.classList.add("form-group");
+      const newlabel = document.createElement("label");
+      newlabel.innerHTML = "Confirm Password";
+      const newinput = document.createElement("input");
 
+      newinput.classList.add("form-control");
+      newinput.placeholder = "Confirm Password";
+      newinput.type = "password";
+      this.ref2.current.appendChild(newlabel);
+      this.ref2.current.appendChild(newinput);
+      this.index++;
+    } else return "";
+  };
+  errormessage = () => {
+    if (this.state.username === "" || this.state.password === "") {
+      return alert("Please enter all required fields");
+    } else {
+      history.push("/transaction");
+    }
+  };
   render() {
     return (
       <div className="loginform">
@@ -59,9 +70,13 @@ class Screen extends Component {
             {this.componentDidMount()}
             <div ref={this.ref2}></div>
             <div className="buttons">
-              <Link to={"/transaction"} className="btn btn-primary signin">
+              <button
+                type="button"
+                onClick={this.errormessage}
+                className="btn btn-primary signin"
+              >
                 Login
-              </Link>
+              </button>
               <button
                 type="submit"
                 className="btn btn-primary signup"
@@ -76,4 +91,4 @@ class Screen extends Component {
     );
   }
 }
-export default Screen;
+export default Login_Logout_Screen;

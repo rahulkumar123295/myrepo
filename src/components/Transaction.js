@@ -13,8 +13,9 @@ class Transaction extends Component {
       this.state.to === "" ||
       this.state.amount === ""
     )
-      return alert("Enter Values");
+      return alert("Please enter all required fields");
     else {
+      this.setState({ balance: this.state.balance - this.state.amount });
       const tablebody = document.createElement("tbody");
       const newtr = document.createElement("tr");
       const newtd1 = document.createElement("td");
@@ -40,12 +41,19 @@ class Transaction extends Component {
     return (
       <div className="transaction container-fluid">
         <nav>
-          <Link to={"/transaction"} className="navbar">
-            Transactions
-          </Link>
-          <Link to={"/capital"} className="navbar">
-            Capital
-          </Link>
+          <div className="leftnav">
+            <Link to={"/transaction"} className="navbar">
+              Transactions
+            </Link>
+            <Link to={"/capital"} className="navbar">
+              Capital
+            </Link>
+          </div>
+          <div className="rightnav">
+            <Link to={"/"} className="navbar ">
+              Logout
+            </Link>
+          </div>
         </nav>
         <div className="row">
           <div className="col-lg-3 leftcolumn">
@@ -89,7 +97,7 @@ class Transaction extends Component {
               ></input>
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="btn btn-primary paybutton"
                 onClick={this.payamount}
               >
                 Pay
@@ -114,13 +122,12 @@ class Transaction extends Component {
               data-target="#exampleModal"
               onClick={this.showbalance}
             >
-              {`Balance ${this.state.balance}`}
+              {`Current Balance: ${this.state.balance}`}
             </button>
 
             <div
               className="modal fade"
               id="exampleModal"
-              tabindex="-1"
               role="dialog"
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
@@ -129,7 +136,7 @@ class Transaction extends Component {
                 <div className="modal-content">
                   <div className="modal-header">
                     <h5 className="modal-title" id="exampleModalLabel">
-                      Your Balance
+                      Current Balance
                     </h5>
                     <button
                       type="button"

@@ -58,10 +58,12 @@ form {
 .theaddark {
   background-color: #7c5cbf;
 }
-.transaction nav {
+.transaction nav,
+.capital nav {
   display: flex;
 }
-.transaction .navbar {
+.transaction .navbar,
+.capital .navbar {
   color: black;
 }
 .rightcolumn {
@@ -72,6 +74,29 @@ form {
   bottom: 10px;
   right: 50px;
 }
-.transaction .uploadbutton {
-  width: 40%;
+.capital .uploadbutton {
+  width: 30%;
+}
+.transaction,
+.capital {
+  background-color: #fffef2;
+}
+.logout {
+  float: right;
+}
+.capital .leftnav,
+.transaction .leftnav {
+  display: flex;
+}
+.transaction .rightnav,
+.capital .rightnav {
+  flex: 2;
+}
+.transaction .leftnav,
+.capital .leftnav {
+  flex: 25;
+}
+.paybutton,
+.submitbutton {
+  margin-bottom: 30px;
 }

@@ -13,7 +13,7 @@ class Capital extends Component {
       this.state.dropFile === null ||
       this.state.amount === ""
     )
-      return alert("Upload Documents");
+      return alert(" Please Upload all required Documents");
     else {
       const tablebody = document.createElement("tbody");
       const newtr = document.createElement("tr");
@@ -59,14 +59,21 @@ class Capital extends Component {
   };
   render() {
     return (
-      <div className="transaction container-fluid">
+      <div className="capital container-fluid">
         <nav>
-          <Link to={"/transaction"} className="navbar">
-            Transactions
-          </Link>
-          <Link to={"/capital"} className="navbar">
-            Capital
-          </Link>
+          <div className="leftnav">
+            <Link to={"/transaction"} className="navbar">
+              Transactions
+            </Link>
+            <Link to={"/capital"} className="navbar">
+              Capital
+            </Link>
+          </div>
+          <div className="rightnav">
+            <Link to={"/"} className="navbar ">
+              Logout
+            </Link>
+          </div>
         </nav>
         <div className="row">
           <div className="col-lg-3 leftcolumn">
@@ -102,7 +109,7 @@ class Capital extends Component {
             <div>
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="btn btn-primary submitbutton"
                 onClick={this.submitdocuments}
               >
                 Submit
@@ -110,14 +117,13 @@ class Capital extends Component {
             </div>
           </div>
           <div className="col-lg-9 rightcolumn">
-            <table class="table" ref={this.ref1}>
-              <thead class="theaddark">
+            <table className="table" ref={this.ref1}>
+              <thead className="theaddark">
                 <tr>
                   <th scope="col">Date</th>
                   <th scope="col">Document</th>
                   <th scope="col">Preview</th>
                   <th scope="col">Amount</th>
-                  
                 </tr>
               </thead>
             </table>

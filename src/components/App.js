@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import Screen from "./Screen";
+import Login_Logout_Screen from "./Login_Logout_Screen";
 import Transaction from "./Transaction";
 import Capital from "./Capital";
 import history from "../history";
@@ -14,7 +14,7 @@ class App extends Component {
         <Router history={history}>
           <div>
             <Switch>
-              <Route path="/" exact component={Screen} />
+              <Route path="/" exact component={Login_Logout_Screen} />
               <Route path="/transaction" exact component={Transaction} />
               <Route path="/capital" exact component={Capital} />
             </Switch>
