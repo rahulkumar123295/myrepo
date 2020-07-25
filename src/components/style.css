@@ -1,7 +1,7 @@
 .loginform {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 80px;
   height: 100vh;
   background-color: #333333;
 }
@@ -41,7 +41,7 @@ form {
 .leftcolumn h1 {
   margin-top: 30px;
   margin-bottom: 30px;
-  font-size: 25px;
+  font-size: 40px;
   color: #624997;
 }
 .leftcolumn input {
@@ -58,45 +58,89 @@ form {
 .theaddark {
   background-color: #7c5cbf;
 }
-.transaction nav,
-.capital nav {
+.transaction nav {
   display: flex;
 }
-.transaction .navbar,
-.capital .navbar {
-  color: black;
+
+.navbar {
+  color: red;
+  display: inline;
 }
 .rightcolumn {
   height: 90vh;
 }
-.balance {
-  position: absolute;
-  bottom: 10px;
-  right: 50px;
-}
-.capital .uploadbutton {
-  width: 30%;
-}
-.transaction,
-.capital {
+
+.transaction {
   background-color: #fffef2;
 }
 .logout {
   float: right;
 }
-.capital .leftnav,
 .transaction .leftnav {
   display: flex;
 }
-.transaction .rightnav,
-.capital .rightnav {
+.transaction .rightnav {
   flex: 2;
 }
-.transaction .leftnav,
-.capital .leftnav {
+.transaction .leftnav {
   flex: 25;
 }
-.paybutton,
-.submitbutton {
+.registerbutton {
   margin-bottom: 30px;
+}
+.mainheading {
+  background-color: #333333;
+}
+.mainheading h1 {
+  color: white;
+  padding-top: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+.mainheading p {
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+.register h1 {
+  margin-top: 20px;
+  color: #624997;
+}
+.registerform {
+  margin-top: 40px;
+}
+.picname {
+  display: flex;
+  width: 60%;
+}
+.proflie {
+  flex: 1;
+}
+.rightform {
+  flex: 1;
+}
+.details {
+  margin-top: 100px;
+}
+.namebutton {
+  border: none;
+  background-color: #fffef2;
+  text-decoration: underline;
+}
+.uploadpic {
+  display: none;
+}
+.labels {
+  color: #5421c0;
+}
+.mymodal {
+  z-index: 1.5;
+  background-color: red;
+}
+.deletebutton {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(197, 66, 66);
+  font-weight: 600;
 }

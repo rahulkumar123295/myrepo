@@ -4,7 +4,7 @@ import history from "../history";
 class Login_Logout_Screen extends Component {
   constructor() {
     super();
-    this.state = { username: "", password: "" };
+    this.state = { username: "", password: "", confirmpassword: "" };
     this.ref1 = React.createRef();
     this.ref2 = React.createRef();
     this.index = 1;
@@ -45,8 +45,9 @@ class Login_Logout_Screen extends Component {
       const newlabel = document.createElement("label");
       newlabel.innerHTML = "Confirm Password";
       const newinput = document.createElement("input");
-
       newinput.classList.add("form-control");
+      newinput.classList.add("confirm");
+
       newinput.placeholder = "Confirm Password";
       newinput.type = "password";
       this.ref2.current.appendChild(newlabel);
@@ -58,34 +59,38 @@ class Login_Logout_Screen extends Component {
     if (this.state.username === "" || this.state.password === "") {
       return alert("Please enter all required fields");
     } else {
-      history.push("/transaction");
+      history.push("/registration");
     }
   };
   render() {
     return (
-      <div className="loginform">
-        <div className="outerbox" ref={this.ref1}>
-          {this.renderlist}
-          <form>
-            {this.componentDidMount()}
-            <div ref={this.ref2}></div>
-            <div className="buttons">
-              <button
-                type="button"
-                onClick={this.errormessage}
-                className="btn btn-primary signin"
-              >
-                Login
-              </button>
-              <button
-                type="submit"
-                className="btn btn-primary signup"
-                onClick={this.signup}
-              >
-                Sign Up
-              </button>
-            </div>
-          </form>
+      <div className="mainheading">
+        <h1>Attendance Management</h1>
+        <p>Teacher's Dashboard</p>
+        <div className="loginform">
+          <div className="outerbox" ref={this.ref1}>
+            {this.renderlist}
+            <form>
+              {this.componentDidMount()}
+              <div ref={this.ref2}></div>
+              <div className="buttons">
+                <button
+                  type="button"
+                  onClick={this.errormessage}
+                  className="btn btn-primary signin"
+                >
+                  Login
+                </button>
+                <button
+                  type="submit"
+                  className="btn btn-primary signup"
+                  onClick={this.signup}
+                >
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );
